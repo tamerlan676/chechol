@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Chechol</title>
+</head>
+<body>
+    <div id="main">
+        <div class="phone-block">
+            <transition name="slide-fade">
+            <div v-if="vld" class="vld">
+                <div class="container">
+                    <h1>{{ name }}</h1>
+                </div>
+                <div class="camera"></div>
+            </div>
+        </transition>
+        <transition name="slide-fade">
+            <div v-if="lnd" class="lnd">
+                <div class="container"></div>
+                <div class="camera"></div>
+            </div>
+            </transition>
+ 
+        </div>
+        <div class="options">
+            <input type="text" v-model="name">
+            <button @click="vldOn">Vladikavakaz</button>
+            <button @click="londonOn">asdasd</button>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script>
+    new Vue({
+  el: '#main',
+  data: function () {
+      return{
+          title: 'Title',
+          name: '',
+          vld: true,
+          lnd: false,
+    }
+  },
+  methods: {
+      londonOn(){
+          this.lnd = true,
+          this.vld = false,
+          console.log('some')
+    },
+    vldOn(){
+          this.lnd = false,
+          this.vld = true,
+          console.log('some')
+    }
+  }
+})
+</script>
+</html>
