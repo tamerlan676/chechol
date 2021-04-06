@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <title>Chechol</title>
 </head>
 <body>
@@ -13,23 +15,92 @@
             <transition name="slide-fade">
             <div v-if="vld" class="vld">
                 <div class="container">
-                    <h1>{{ name }}</h1>
+                    <div class="qr-top"></div>
+                    <div class="vld-line-left"></div>
+                    <div class="flag">
+                        <img src="http://flagiaf.ru/ne_priznan/yuzhnaya_osetiya/yuzhnaya_osetiya.png" alt="">
+                    </div>
+                    <div class="place-info">
+                        <div>Place: 1a</div>
+                        <div>Place: 1a</div>
+                    </div>
+                    <div class="small-town">VLD</div>
+                    <div class="town">Vla <br> dikavkaz</div>
+                    <div class="place">Vladikavkaz, Beslan 15 13333</div>
+                    <div class="info"></div>
+                    <div class="passanger">passanger: <br><b>{{ name }}</b></div>
+                    <div class="vld-line-right"></div>
+                    <div class="qr-bottom"></div>
                 </div>
                 <div class="camera"></div>
             </div>
         </transition>
+
+
+
+
+
         <transition name="slide-fade">
             <div v-if="lnd" class="lnd">
-                <div class="container"></div>
+                <div class="container">
+                    <div class="qr-top"></div>
+                    <div class="vld-line-left"></div>
+                    <div class="flag">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Portugal_flag_300.png" alt="">
+                    </div>
+                    <div class="place-info">
+                        <div>Place: 1a</div>
+                        <div>Place: 1a</div>
+                    </div>
+                    <div class="small-town">PRTGL</div>
+                    <div class="town">Lis <br> bon</div>
+                    <div class="place">portugal, lisboa 15 13333</div>
+                    <div class="info"></div>
+                    <div class="passanger">passanger: <br><b>{{ name }}</b></div>
+                    <div class="prtgl-line-right"></div>
+                    <div class="qr-bottom"></div>
+                </div>
                 <div class="camera"></div>
             </div>
-            </transition>
+        </transition>
+
+        
+        <transition name="slide-fade">
+            <div v-if="madrid" class="madrid">
+                <div class="container">
+                    <div class="qr-top"></div>
+                    <div class="vld-line-left"></div>
+                    <div class="flag">
+                        <img src="https://diplomat-consulting.ru/assets/templates/index/img/flag-ispanii.jpg" alt="">
+                    </div>
+                    <div class="place-info">
+                        <div>Place: 1a</div>
+                        <div>Place: 1a</div>
+                    </div>
+                    <div class="small-town">SPA</div>
+                    <div class="town">Mad <br> rid</div>
+                    <div class="place">Spain, madrid 15 13333</div>
+                    <div class="info"></div>
+                    <div class="passanger">passanger: <br><b>{{ name }}</b></div>
+                    <div class="prtgl-line-right"></div>
+                    <div class="qr-bottom"></div>
+                </div>
+                <div class="camera"></div>
+            </div>
+        </transition>
  
         </div>
         <div class="options">
-            <input type="text" v-model="name">
-            <button @click="vldOn">Vladikavakaz</button>
-            <button @click="londonOn">asdasd</button>
+            <div class="buttons">
+                <h3>Выберите город ваше мечты</h3>
+                <button @click="vldOn">Vladikavakaz</button>
+                <button @click="londonOn">Lisboa</button>
+                <button @click="madridOn">Madrid</button>
+            </div>
+            <h3>Заполните поля и наблюдайте за результатом</h3>
+            <input placeholder="Введите имя и фамилию" type="text" v-model="name" >
+            <input placeholder="Введите дату рождения" type="text" >
+            <input placeholder="Введите кличку" type="text">
         </div>
     </div>
 </body>
@@ -43,17 +114,26 @@
           name: '',
           vld: true,
           lnd: false,
+          madrid: false,
     }
   },
   methods: {
       londonOn(){
           this.lnd = true,
           this.vld = false,
+          this.madrid = false,
           console.log('some')
     },
     vldOn(){
           this.lnd = false,
           this.vld = true,
+          this.madrid = false,
+          console.log('some')
+    },
+    madridOn(){
+          this.lnd = false,
+          this.vld = false,
+          this.madrid = true,
           console.log('some')
     }
   }

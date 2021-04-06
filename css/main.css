@@ -3,10 +3,12 @@
     margin: 0 auto;
     display: flex;
     align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    justify-content: space-between;
     height: 100vh;
 }
 
-.vld{
+.vld, .madrid{
     width: 372px;
     height: 700px;
     background: #000;
@@ -25,6 +27,108 @@
     left: 0;
     right: 0;
 }
+.qr-top{
+    width: 280px;
+    height: 40px;
+    background: black;
+}
+
+.flag{
+    width: 60px;
+    height: 40px;
+    position: absolute;
+    right: 30px;
+    top: 80px
+}
+
+.flag img{
+    object-fit: cover;
+    width: 60px;
+    height: 40px;
+}
+
+.place-info{
+    display: flex;
+    text-transform: uppercase;
+    flex-direction: column;
+    position: absolute;
+    right: 30px;
+    top:130px;
+    font-size: 10px;
+}
+
+.place{
+    text-transform: uppercase;
+    border-bottom: 3px solid black;
+    position: absolute;
+    width: 280px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    bottom: 180px;
+    font-size: 12px;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+.town{
+    width: 240px;
+    font-size:82px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 230px;
+    left: 20px;
+    height: auto;
+    word-wrap: break-word;
+    line-height: 70px;  
+}
+
+.passanger{
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 100px;
+    left: 20px;
+    height: 50px;
+}
+
+.small-town{
+    padding: 0px 15px;
+    background: #000;
+    position: absolute;
+    color: white;
+    text-transform: uppercase;
+    top: 170px;
+    left: 8px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.vld-line-left{
+    width: 10px;
+    height: 500px;
+    background: red;
+    left: 2px;
+    top:60px;
+    position: absolute;
+}
+.vld-line-right{
+    width: 10px;
+    height: 500px;
+    background: orange;
+    right: 2px;
+    top:60px;
+    position: absolute;
+}
+
+.prtgl-line-right{
+    width: 10px;
+    height: 500px;
+    background: green;
+    right: 2px;
+    top:60px;
+    position: absolute;
+}
+
 
 .lnd{
     width: 372px;
@@ -62,7 +166,21 @@
   .options{
       display: flex;
       flex-direction: column;
-      border: 1px solid red;
-      width: 100%;
-      height: 100%;
+  }
+
+  button{
+      height: 50px;
+      padding: 20px;
+      border: none;
+      font-family: 'Open Sans', sans-serif;
+      text-transform: uppercase;
+      cursor: pointer;
+  }
+
+  input{
+      width: 320px;  
+      height: 40px;
+      border: 2px solid black;
+      padding: 10px;
+      margin-bottom: 20px;
   }
