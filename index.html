@@ -3,105 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <title>Chechol</title>
 </head>
 <body>
     <div id="main">
         <div class="phone-block">
-            <transition name="slide-fade">
-            <div v-if="vld" class="vld">
-                <div class="container">
-                    <div class="qr-top"></div>
-                    <div class="vld-line-left"></div>
-                    <div class="flag">
-                        <img src="http://flagiaf.ru/ne_priznan/yuzhnaya_osetiya/yuzhnaya_osetiya.png" alt="">
-                    </div>
-                    <div class="place-info">
-                        <div>Place: 1a</div>
-                        <div>Place: 1a</div>
-                    </div>
-                    <div class="small-town">VLD</div>
-                    <div class="town">Vla <br> dikavkaz</div>
-                    <div class="place">Vladikavkaz, Beslan 15 13333</div>
-                    <div class="info"></div>
-                    <div class="passanger">passanger: <br><b>{{ name }}</b></div>
-                    <div class="vld-line-right"></div>
-                    <div class="qr-bottom"></div>
-                </div>
-                <div class="camera"></div>
+            <div class="chehol" v-show="vld">
+                <img src="img/chehol.svg" alt="">
             </div>
-        </transition>
 
 
-
-
-
-        <transition name="slide-fade">
-            <div v-if="lnd" class="lnd">
-                <div class="container">
-                    <div class="qr-top"></div>
-                    <div class="vld-line-left"></div>
-                    <div class="flag">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Portugal_flag_300.png" alt="">
-                    </div>
-                    <div class="place-info">
-                        <div>Place: 1a</div>
-                        <div>Place: 1a</div>
-                    </div>
-                    <div class="small-town">PRTGL</div>
-                    <div class="town">Lis <br> bon</div>
-                    <div class="place">portugal, lisboa 15 13333</div>
-                    <div class="info"></div>
-                    <div class="passanger">passanger: <br><b>{{ name }}</b></div>
-                    <div class="prtgl-line-right"></div>
-                    <div class="qr-bottom"></div>
-                </div>
-                <div class="camera"></div>
+            <div class="chehol" v-show="msc">
+                <img src="img/chehol-msc.svg" alt="">
             </div>
-        </transition>
 
-        
-        <transition name="slide-fade">
-            <div v-if="madrid" class="madrid">
-                <div class="container">
-                    <div class="qr-top"></div>
-                    <div class="vld-line-left"></div>
-                    <div class="flag">
-                        <img src="https://diplomat-consulting.ru/assets/templates/index/img/flag-ispanii.jpg" alt="">
-                    </div>
-                    <div class="place-info">
-                        <div>Place: 1a</div>
-                        <div>Place: 1a</div>
-                    </div>
-                    <div class="small-town">SPA</div>
-                    <div class="town">Mad <br> rid</div>
-                    <div class="place">Spain, madrid 15 13333</div>
-                    <div class="info"></div>
-                    <div class="passanger">passanger: <br><b>{{ name }}</b></div>
-                    <div class="prtgl-line-right"></div>
-                    <div class="qr-bottom"></div>
-                </div>
-                <div class="camera"></div>
-            </div>
-        </transition>
- 
         </div>
         <div class="options">
-            <div class="buttons">
-                <h3>Выберите город ваше мечты</h3>
-                <button @click="vldOn">Vladikavakaz</button>
-                <button @click="londonOn">Lisboa</button>
-                <button @click="madridOn">Madrid</button>
+            <h3>Выберите свой город мечты:</h3>
+            <div class="towns">
+                <div class="town-item" @click="mscOn">
+                    <img width="25px" src="/img/rus.svg" alt="russia">
+                    Moscow
+                </div>
+                <div class="town-item">
+                    <img width="25px" src="/img/rus.svg" alt="russia">
+                    Saint-Petersburg
+                </div>
+                <div @click="vldOn" class="town-item">
+                    <img width="25px" src="/img/rus.svg" alt="russia">
+                    Vladikavkaz
+                </div>
+                <div class="town-item">
+                    <img width="25px" src="/img/fra.svg" alt="russia">
+                    Paris
+                </div>
+                <div class="town-item">
+                    <img width="25px" src="/img/ita.svg" alt="russia">
+                    Milan
+                </div>
+                <div class="town-item">
+                    <img width="25px" src="/img/spa.svg" alt="russia">
+                    Madrid
+                </div>
+                <div class="town-item">
+                    <img width="25px" src="/img/spa.svg" alt="russia">
+                    Barcelona
+                </div>
+         
+                <div class="town-item">
+                    <img width="25px" src="/img/arm.svg" alt="russia">
+                    Erevan
+                </div>
             </div>
-            <h3>Заполните поля и наблюдайте за результатом</h3>
-            <input placeholder="Введите имя и фамилию" type="text" v-model="name" >
-            <input placeholder="Введите дату рождения" type="text" >
-            <input placeholder="Введите кличку" type="text">
+            <h3>Введите свои данные</h3>
+            <p>данные сразу появятся на билете</p>
+            <form action="">
+                <input class="input" type="text" placeholder="Введите имя">
+                <input class="input" type="text" placeholder="Введите имя">
+                <input class="input" type="text" placeholder="Введите имя">
+                <p>А теперь информация для доставки</p>
+                <br>
+                <input class="input" type="text" placeholder="Введите имя">
+                <input class="input" type="text" placeholder="Введите имя">
+                <input class="input" type="text" placeholder="Введите имя">
+                <button class="btn-submit">Заказать чехол</button>
+            </form>
+            
         </div>
+       
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -110,33 +83,23 @@
   el: '#main',
   data: function () {
       return{
-          title: 'Title',
           name: '',
           vld: true,
+          msc: false,
           lnd: false,
           madrid: false,
     }
   },
   methods: {
-      londonOn(){
-          this.lnd = true,
-          this.vld = false,
-          this.madrid = false,
-          console.log('some')
-    },
     vldOn(){
-          this.lnd = false,
           this.vld = true,
-          this.madrid = false,
-          console.log('some')
+          this.msc = false
     },
-    madridOn(){
-          this.lnd = false,
+    mscOn(){
           this.vld = false,
-          this.madrid = true,
-          console.log('some')
+          this.msc = true
+        }
     }
-  }
-})
+    })
 </script>
 </html>
