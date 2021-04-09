@@ -23,30 +23,40 @@ h1,h2,h3,p{
     background-size: cover;
     background-position: center;
     background: url(/img/bg.jpg);
-    position: fixed;
+    height: 400px;
     top: 0;
-    padding: 20px;
-    box-sizing: border-box;
+    padding: 20px 0;
  }
  
 
 .chehol{
     width: 250px;
-    height: auto;
+    height: 400px;
     z-index: 2;
     margin: 0 auto;
     transition: all 1.5s ease;
+    position: relative;
 }
 
 
 .chehol img{
-    object-fit: cover;
     width: 250px;
-    height: 100%;
+    height: 400px;
     margin: 0 auto;
 }
+.name-area{
+    position: absolute;
+    background: white;
+    width: 130px;
+    height: 25px;
+    z-index: 10;
+    left: 58px;
+    top: 322px;
+    font-size: 9px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
 .options{
-    margin-top: 550px;
     padding: 16px;
     height: 800px;
 }
@@ -161,6 +171,7 @@ form{
 
     .chehol{
         width: 300px;
+        height: auto;
     }
 
     .chehol img{
@@ -169,6 +180,13 @@ form{
         height: 100%;
         margin: 0 auto;
         display: block;
+    }
+
+    .name-area{
+        top: 493px;
+        left: 49px;
+        height: 40px;
+        font-size: 11px;
     }
 }
 
@@ -190,6 +208,14 @@ form{
         height: 100%;
         margin: 0 auto;
         display: block;
+    }
+    .name-area{
+        top: 655px;
+        left: 66px;
+        height: 40px;
+        font-size: 11px;
+        width: 260px;
+        font-size: 12px;
     }
 
 }

@@ -14,13 +14,16 @@
         <div class="phone-block">
             <div class="chehol" v-show="vld">
                 <img src="img/chehol.svg" alt="">
+                <div class="name-area">
+                    <p>{{ name }}</p>
+                </div>
             </div>
-
-
             <div class="chehol" v-show="msc">
                 <img src="img/chehol-msc.svg" alt="">
+                <div class="name-area">
+                    <p>{{ name }}</p>
+                </div>
             </div>
-
         </div>
         <div class="options">
             <h3>Выберите свой город мечты:</h3>
@@ -62,7 +65,7 @@
             <h3>Введите свои данные</h3>
             <p>данные сразу появятся на билете</p>
             <form action="">
-                <input class="input" type="text" placeholder="Введите имя">
+                <input class="input" v-model="name" type="text" placeholder="Введите имя">
                 <input class="input" type="text" placeholder="Введите имя">
                 <input class="input" type="text" placeholder="Введите имя">
                 <p>А теперь информация для доставки</p>
@@ -74,11 +77,13 @@
             </form>
             
         </div>
+        
        
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 <script>
+
     new Vue({
   el: '#main',
   data: function () {
