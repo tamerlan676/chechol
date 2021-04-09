@@ -20,19 +20,20 @@ h1,h2,h3,p{
 }
 .phone-block{
     width: 100%;
-    background: url(../img/bg.jpg);
     background-size: cover;
     background-position: center;
+    background: url(/img/bg.jpg);
     position: fixed;
     top: 0;
     padding: 20px;
     box-sizing: border-box;
-}
-
+ }
+ 
 
 .chehol{
     width: 250px;
     height: auto;
+    z-index: 2;
     margin: 0 auto;
     transition: all 1.5s ease;
 }
@@ -149,6 +150,7 @@ form{
         justify-content: center;
         align-items: center;
         height: auto;
+        background-size: cover;
     }
 
     .options{
