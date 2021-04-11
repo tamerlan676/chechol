@@ -1,11 +1,31 @@
+
+@font-face {
+    font-family: Bessemer-Regular;
+    src: url(../fonts/Bessemer-Regular.ttf);
+    font-weight: normal;
+   }
+
+@font-face {
+font-family: Bessemer-Semibold; /* Имя шрифта */
+src: url(../fonts/Bessemer-Semibold.ttf);
+font-weight: 500;
+}
+
+
+@font-face {
+    font-family: Bessemer-Bold; /* Имя шрифта */
+    src: url(../fonts/Bessemer-Bold.ttf);
+    font-weight: 600;
+    }
+
 body{
     padding: 0;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
 }
 h1,h2,h3,p{
     padding: 0;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .fade-enter-active, .fade-leave-active {
@@ -38,7 +58,6 @@ h1,h2,h3,p{
     position: relative;
 }
 
-
 .chehol img{
     width: 250px;
     height: 400px;
@@ -55,6 +74,7 @@ h1,h2,h3,p{
     font-size: 9px;
     font-weight: 500;
     text-transform: uppercase;
+    font-family: Bessemer-Bold;
 }
 .options{
     padding: 16px;
@@ -123,7 +143,6 @@ form{
     padding: 20px;
     text-transform: uppercase;
     font-size: 20px;
-    font-family: 'Roboto', sans-serif;
     margin-top: 32px;       
 }
 
@@ -197,6 +216,7 @@ form{
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        font-family: Bessemer-Regular;
     }
     .chehol{
         width: 400px;
@@ -219,5 +239,6 @@ form{
     }
 
 }
+
 
  
