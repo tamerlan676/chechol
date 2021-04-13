@@ -14,50 +14,72 @@
         <div class="phone-block">
             <div class="chehol" v-if="vld">
                 <img src="img/cases/vladikavkaz.svg" alt="">
+                <div class="date-area">
+                    <p>DR - {{ date }}</p>
+                </div>
                 <div class="name-area">
                     <p>{{ name }}</p>
                 </div>
+           
             </div>
             <div class="chehol" v-if="paris">
                 <img src="img/cases/paris.svg" alt="">
+                <div class="date-area">
+                    <p>DR - {{ date }}</p>
+                </div>
                 <div class="name-area">
                     <p>{{ name }}</p>
                 </div>
             </div>
             <div class="chehol" v-if="losAngeles">
                 <img src="img/cases/los-angeles.svg" alt="">
+                <div class="date-area">
+                    <p>DR - {{ date }}</p>
+                </div>
                 <div class="name-area">
                     <p>{{ name }}</p>
                 </div>
             </div>
             <div class="chehol" v-if="london">
                 <img src="img/cases/london.svg" alt="">
+                <div class="date-area">
+                    <p>DR - {{ date }}</p>
+                </div>
                 <div class="name-area">
                     <p>{{ name }}</p>
                 </div>
             </div>
             <div class="chehol" v-if="newYork">
                 <img src="img/cases/new-york.svg" alt="">
+                <div class="date-area">
+                    <p>DR - {{ date }}</p>
+                </div>
                 <div class="name-area">
                     <p>{{ name }}</p>
                 </div>
             </div>
             <div class="chehol" v-if="munich">
                 <img src="img/cases/munich.svg" alt="">
+                <div class="date-area">
+                    <p>DR - {{ date }}</p>
+                </div>
                 <div class="name-area">
                     <p>{{ name }}</p>
                 </div>
             </div>
             <div class="chehol" v-if="tokyo">
                 <img src="img/cases/tokyo.svg" alt="">
+                <div class="date-area">
+                    <p>DR - {{ date }}</p>
+                </div>
                 <div class="name-area">
                     <p>{{ name }}</p>
                 </div>
             </div>
         </div>
         <div class="options">
-            <form action="">
-            <h3>Выберите свой город мечты:</h3>
+            <form action="send">
+            <h3>1. Выберите город:</h3>
             <div class="towns">
 
                 <div class="town-item">
@@ -103,15 +125,14 @@
             </div>
                
               </div>
-            <h3>Введите свои данные</h3>
-            <p>данные сразу появятся на билете</p>
-                <input class="input" v-model="name" type="text" placeholder="Введите имя">
-                <p>А теперь информация для доставки</p>
-                <br>
-                <input class="input" type="text" placeholder="Введите имя">
-                <input class="input" type="text" placeholder="Введите имя">
-                <input class="input" type="text" placeholder="Введите имя">
-                <button class="btn-submit">Заказать чехол</button>
+            <h3 class="form-title">2. Введите данные пассажира</h3>
+                <input class="input" value="name" v-model="name" type="text" placeholder="Имя и фамилию на английском">
+                <input class="input" value="date" v-model="date" type="number" placeholder="Дата рождения цифрами">
+                <h3 class="form-title">3. Посмотрите на чехол, а затем оставьте свои данные и мы отправим его вам!</h3>
+                <input class="input" type="text" placeholder="Имя">
+                <input class="input" type="number" placeholder="Номер телефона">
+                <input class="input" type="text" placeholder="Полный адрес">
+                <button type="submit" class="btn-submit">Заказать чехол</button>
             </form>
             
         </div>
@@ -127,6 +148,7 @@
   data: function () {
       return{
           name: '',
+          date: '',
           vld: true,
           lasVegas: false,
           losAngeles: false,
