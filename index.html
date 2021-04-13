@@ -12,62 +12,100 @@
 <body>
     <div id="main">
         <div class="phone-block">
-            <div class="chehol" v-show="vld">
-                <img src="img/chehol.svg" alt="">
+            <div class="chehol" v-if="vld">
+                <img src="img/cases/vladikavkaz.svg" alt="">
                 <div class="name-area">
                     <p>{{ name }}</p>
                 </div>
             </div>
-            <div class="chehol" v-show="msc">
-                <img src="img/chehol-msc.svg" alt="">
+            <div class="chehol" v-if="paris">
+                <img src="img/cases/paris.svg" alt="">
+                <div class="name-area">
+                    <p>{{ name }}</p>
+                </div>
+            </div>
+            <div class="chehol" v-if="losAngeles">
+                <img src="img/cases/los-angeles.svg" alt="">
+                <div class="name-area">
+                    <p>{{ name }}</p>
+                </div>
+            </div>
+            <div class="chehol" v-if="london">
+                <img src="img/cases/london.svg" alt="">
+                <div class="name-area">
+                    <p>{{ name }}</p>
+                </div>
+            </div>
+            <div class="chehol" v-if="newYork">
+                <img src="img/cases/new-york.svg" alt="">
+                <div class="name-area">
+                    <p>{{ name }}</p>
+                </div>
+            </div>
+            <div class="chehol" v-if="munich">
+                <img src="img/cases/munich.svg" alt="">
+                <div class="name-area">
+                    <p>{{ name }}</p>
+                </div>
+            </div>
+            <div class="chehol" v-if="tokyo">
+                <img src="img/cases/tokyo.svg" alt="">
                 <div class="name-area">
                     <p>{{ name }}</p>
                 </div>
             </div>
         </div>
         <div class="options">
+            <form action="">
             <h3>Выберите свой город мечты:</h3>
             <div class="towns">
-                <div class="town-item" @click="mscOn">
-                    <img width="25px" src="/img/rus.svg" alt="russia">
-                    Moscow
-                </div>
+
                 <div class="town-item">
-                    <img width="25px" src="/img/rus.svg" alt="russia">
-                    Saint-Petersburg
+                    <input @click="vldOn" type="radio" id="contactChoice1"
+                    name="contact" value="email">
+                   <label for="contactChoice1"> <img src="/img/rus.png" alt=""> Vladikavkaz</label>
                 </div>
-                <div @click="vldOn" class="town-item">
-                    <img width="25px" src="/img/rus.svg" alt="russia">
-                    Vladikavkaz
-                </div>
+
                 <div class="town-item">
-                    <img width="25px" src="/img/fra.svg" alt="russia">
-                    Paris
+                    <input @click="parisOn" type="radio" id="contactChoice2"
+                    name="contact" value="phone">
+                   <label for="contactChoice2"><img src="/img/fra.png" alt=""> Paris</label>
                 </div>
-                <div class="town-item">
-                    <img width="25px" src="/img/ita.svg" alt="russia">
-                    Milan
-                </div>
-                <div class="town-item">
-                    <img width="25px" src="/img/spa.svg" alt="russia">
-                    Madrid
-                </div>
-                <div class="town-item">
-                    <img width="25px" src="/img/spa.svg" alt="russia">
-                    Barcelona
-                </div>
-         
-                <div class="town-item">
-                    <img width="25px" src="/img/arm.svg" alt="russia">
-                    Erevan
-                </div>
+
+            <div class="town-item">
+                <input @click="laOn" type="radio" id="contactChoice3"
+                name="contact" value="mail">
+               <label for="contactChoice3"><img src="/img/usa.png" alt=""> Los-Angeles</label>
             </div>
+
+            <div class="town-item">
+                <input @click="nyOn" type="radio" id="contactChoice4"
+                name="contact" value="mail">
+               <label for="contactChoice4"><img src="/img/usa.png" alt=""> New York</label>
+            </div>
+
+            <div class="town-item">
+                <input type="radio" @click="munichOn" id="contactChoice5"
+                name="contact" value="mail">
+               <label for="contactChoice5"><img src="/img/ger.png" alt=""> Munich</label>
+            </div>
+
+            <div class="town-item">
+                <input @click="londonOn" type="radio" id="contactChoice6"
+                name="contact" value="mail">
+               <label for="contactChoice6"><img src="/img/eng.png" alt=""> London</label>
+            </div>
+
+            <div class="town-item">
+                <input @click="tokioOn" type="radio" id="contactChoice7"
+                name="contact" value="mail">
+               <label for="contactChoice7"><img src="/img/jap.png" alt=""> Tokyo</label>
+            </div>
+               
+              </div>
             <h3>Введите свои данные</h3>
             <p>данные сразу появятся на билете</p>
-            <form action="">
                 <input class="input" v-model="name" type="text" placeholder="Введите имя">
-                <input class="input" type="text" placeholder="Введите имя">
-                <input class="input" type="text" placeholder="Введите имя">
                 <p>А теперь информация для доставки</p>
                 <br>
                 <input class="input" type="text" placeholder="Введите имя">
@@ -90,20 +128,87 @@
       return{
           name: '',
           vld: true,
-          msc: false,
-          lnd: false,
-          madrid: false,
+          lasVegas: false,
+          losAngeles: false,
+          newYork: false,
+          paris: false,
+          tokyo: false,
+          london: false,
+          munich: false
     }
   },
   methods: {
     vldOn(){
           this.vld = true,
-          this.msc = false
+          this.lasVegas = false,
+          this.losAngeles = false,
+          this.newYork = false,
+          this.paris = false,
+          this.tokyo = false,
+          this.london = false,
+          this.munich = false
     },
-    mscOn(){
+    parisOn(){
           this.vld = false,
-          this.msc = true
-        }
+          this.lasVegas = false,
+          this.losAngeles = false,
+          this.newYork = false,
+          this.paris = true,
+          this.tokyo = false,
+          this.london = false,
+          this.munich = false
+
+    },
+    laOn(){
+          this.vld = false,
+          this.lasVegas = false,
+          this.losAngeles = true,
+          this.newYork = false,
+          this.paris = false,
+          this.tokyo = false,
+          this.london = false,
+          this.munich = false
+    },
+    londonOn(){
+          this.vld = false,
+          this.lasVegas = false,
+          this.losAngeles = false,
+          this.newYork = false,
+          this.paris = false,
+          this.tokyo = false,
+          this.london = true,
+          this.munich = false
+    },
+    nyOn(){
+          this.vld = false,
+          this.lasVegas = false,
+          this.losAngeles = false,
+          this.newYork = true,
+          this.paris = false,
+          this.tokyo = false,
+          this.london = false,
+          this.munich = false
+    },
+    munichOn(){
+          this.vld = false,
+          this.lasVegas = false,
+          this.losAngeles = false,
+          this.newYork = false,
+          this.paris = false,
+          this.tokyo = false,
+          this.london = false,
+          this.munich = true
+    },
+    tokioOn(){
+          this.vld = false,
+          this.lasVegas = false,
+          this.losAngeles = false,
+          this.newYork = false,
+          this.paris = false,
+          this.tokyo = true,
+          this.london = false,
+          this.munich = false
+    },
     }
     })
 </script>
